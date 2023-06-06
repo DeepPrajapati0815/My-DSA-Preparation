@@ -2,13 +2,25 @@ package kunalkushwaha;
 
 import java.util.Arrays;
 
+
+/*
+ * first apply binary search for finding first occurrence of given target
+ * than apply binary search to find last occurrence
+ * 
+ * 
+ * */
+
 public class FirstAndLastPosition {
 	
-	public static int[] findFirstAndLastOccurance(int[] arr,int target) {
+	public static int[] findFirstAndLastOccurrence(int[] arr,int target) {
 		int[] ans = {-1,-1};
 		
+		//check for first occurrence if target first
 		ans[0] = search(arr,target,true);
-		ans[1] = search(arr,target,false);
+
+		if(ans[0] != -1) {			
+			ans[1] = search(arr,target,false);
+		}
 		
 		return ans;
 	}
@@ -31,6 +43,10 @@ public class FirstAndLastPosition {
 			}
 			else {
 				ans = mid;
+				
+				// if target found it may be possible that it is not the answer 
+				// we further check for finding first and last occurrence
+				
 				if(isFirst) {
 					end = mid - 1;
 				}
@@ -47,6 +63,6 @@ public class FirstAndLastPosition {
 		
 		int[] nums = {10,23,46,46,46,50,50,90};
 		
-		System.out.println(Arrays.toString(findFirstAndLastOccurance(nums, 46)));
+		System.out.println(Arrays.toString(findFirstAndLastOccurrence(nums, 46)));
 	}
 }
