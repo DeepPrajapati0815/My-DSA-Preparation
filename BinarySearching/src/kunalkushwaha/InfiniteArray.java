@@ -14,7 +14,7 @@ public class InfiniteArray {
 		
 		// check target lie in the range if not than increase the size of the chunk
 		
-		while(target>arr[end]) {
+		while(end < arr.length && target>arr[end] ) {
 			int newStrat = end +1;
 			
 		//  end = previous end + (size of chunk * 2)
@@ -22,6 +22,7 @@ public class InfiniteArray {
 			start = newStrat;
 		}
 		
+		 
 		return binarySerach(arr, target, start, end);
 	}
 
@@ -44,9 +45,9 @@ public class InfiniteArray {
 	}
 	
 	public static void main(String[] args) {
-		int[] nums = {10,23,46,48,49,50,50,90};
+		int[] nums = {2,3,5,6,7,8,10,11,12,15,20,23,30};
 		
-		System.out.println(infiniteArraySearch(nums, 46));
+		System.out.println(infiniteArraySearch(nums, 10));
 	
 	}
 	

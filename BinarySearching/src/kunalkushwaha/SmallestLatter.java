@@ -27,11 +27,11 @@ public class SmallestLatter {
 			while(start<=end) {
 				int mid = start + (end - start)/2;
 				
-				if(target < letters[mid]){
-					end = mid - 1;
+				if(target >= letters[mid]){
+					start = mid + 1;
 				}
 				else{
-					start = mid + 1;
+					end = mid - 1;
 				}
 			}
 			
