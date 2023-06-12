@@ -60,6 +60,7 @@ public class SearchInRotated {
 				}
 				end--;
 			}
+//			int[] nums = {3,4,5,5,5,0,1,2,2,2,2};
 			else if(arr[start] < arr[mid] || (arr[start] == arr[mid] && arr[mid] > arr[end])) {
 				start = mid + 1;
 			}else {
@@ -118,9 +119,9 @@ public class SearchInRotated {
         return binarySearch(arr, target, pivot + 1, arr.length - 1);}
 	
 	public static void main(String[] args) {
-		int[] nums = {1,2,4,8};
+		int[] nums = {3,4,5,5,5,0,1,2};
 		
-		System.out.println(search(nums,8));
+		System.out.println(search(nums,4));
 	}
 }
 
